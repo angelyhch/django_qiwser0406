@@ -1,0 +1,24 @@
+{% load static %}
+
+<div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <a href="https://www.so.com/" class="navbar-brand">
+                <i class="bi bi-house"></i>360搜索主页
+            </a>
+        </div>
+
+        <div>
+            <ul class="nav navbar-nav" role="navigation">
+                <li>
+                    <a href="{% url 'blog:blog_title' %}">BLOG</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'account:user_login' %}">LOGIN</a></li>
+            </ul>
+        </div>
+    </nav>
+
+</div>

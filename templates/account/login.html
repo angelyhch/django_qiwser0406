@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock title %}
+
+{% block content %}
+    <div class="row text-center vertical-middle-sm">
+        <h1 class="col-12">Login</h1>
+        <p class="col-12">Input your username and password</p>
+        <form action="." class="form-horizontal col-12" method="post">
+            {% csrf_token %}
+<!--            {{ form.as_p }}-->
+            <div class="form-group row">
+                <label for="{{ form.username.id_for_label }}" class="text-right col-md-5 control-label" style="color:red">
+                    <i class="bi bi-person"></i>
+                    <span>Username</span>
+                </label>
+                <div class="col-md-6 text-left">
+                    {{ form.username }}
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="{{ form.password.id_for_label }}" class="text-right col-md-5 control-label" style="color:blue">
+                    <i class="bi bi-file-word"></i>
+                    <span>Password</span>
+                </label>
+                <div class="col-md-6 text-left">
+                    {{ form.password}}
+                </div>
+            </div>
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+{% endblock content %}
