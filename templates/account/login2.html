@@ -1,0 +1,43 @@
+{% extends  'base.html' %}
+{% load static %}
+
+{% block title %}
+Login2
+{% endblock title %}
+
+{% block content %}
+    <div class="row text-center vertical-middle-sm">
+        <h1 class="col-12">Login_Built in Method of Django</h1>
+        {% if form.errors %}
+        <p class="col-12 text-center">Your username and password didn't match. Please try again.</p>
+        {% endif %}
+
+        <p class="col-12">Input your username and password</p>
+
+        <form action="{% url 'account:user_login' %}" class="form-horizontal" method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}" class="col-md-5 control-label" style="color:red">
+                    <span><i class="bi bi-person"></i></span>
+                    Username
+                </label>
+                <div class="col-md-6 text-left">
+                    {{ form.username }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.password.id_for_label }}" class="col-md-5 control-label" style="color:blue">
+                    <i class="bi bi-pencil"></i>Password
+                </label>
+                <div class="col-md-6 text-left">
+                    {{ form.password }}
+                </div>
+            </div>
+
+            <input type="submit" class="btn btn-primary btn-lg" value="Login">
+
+        </form>
+    </div>
+{% endblock content %}

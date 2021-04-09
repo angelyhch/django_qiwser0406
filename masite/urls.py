@@ -19,6 +19,8 @@ from django.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
+    path('', include('blog.urls')),  #todo: blog下面有两种路径可达。如何只是主页才跳转过来？
     path('account/', include('account.urls')),
+
 
 ]
